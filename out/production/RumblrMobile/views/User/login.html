@@ -1,0 +1,24 @@
+#{extends 'main.html' /}
+#{set title:'Login' /}
+#{ifErrors}
+<p class="error">Username or password incorrect!</p>
+#{/ifErrors}
+<body>
+<div id="content">
+    <section id="logoContainer"><a href="css/index.html"><img id="logo" title="logo image" height="29px" width="145px"
+                                                              src="img/logo.png"/></a></section>
+
+    <section class="column" id="login">
+        #{form @User.loginUser()}
+        <label>Username</label>
+        <input type="text" name="password" maxlength="50"/>
+        <label>Password</label>
+        <input name="password" type="password" maxlength="50"/>
+        <input class="button" id="logIn" name="logIn" type="submit" value="Log in"/>
+        #{/form}
+    </section>
+
+    <section id="footer">© rumblr. inc 2011 | <a href="#">Home</a> | <a href="#">Sign Up</a></section>
+</div>
+</body>
+</html>

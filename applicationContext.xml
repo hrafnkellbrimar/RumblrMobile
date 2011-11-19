@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="postService" class="is.ru.honn.rumblr.domain.PostActions">
+        <property name="postDataGateway" ref="postDataGateway"/>
+    </bean>
+
+    <bean id="postDataGateway" class="is.ru.honn.rumblr.data.posts.PostData">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="userService" class="is.ru.honn.rumblr.domain.UserActions">
+        <property name="userDataGateway" ref="userDataGateway"/>
+    </bean>
+
+    <bean id="userDataGateway" class="is.ru.honn.rumblr.data.users.UserData">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="net.sourceforge.jtds.jdbc.Driver"/>
+        <property name="url" value="jdbc:jtds:sqlserver://hrnem.ru.is:1433"/>
+        <property name="username" value="hshhrafnkell10"/>
+        <property name="password" value="x6wuu8"/>
+    </bean>
+
+    <bean id="link" class="is.ru.honn.rumblr.domain.LinkPostFactory"/>
+    <bean id="quote" class="is.ru.honn.rumblr.domain.QuotePostFactory"/>
+    <bean id="regular" class="is.ru.honn.rumblr.domain.RegularPostFactory"/>
+
+</beans>
