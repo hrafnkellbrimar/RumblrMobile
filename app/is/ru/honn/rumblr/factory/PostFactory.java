@@ -13,7 +13,7 @@ abstract public class PostFactory
 {
   public static ArrayList<PostDetailDTO> createPostDetailsFromPost(AbstractRumblrPost post, String username)
   {
-    ApplicationContext ctx = new FileSystemXmlApplicationContext("applicationContext.xml");
+    ApplicationContext ctx = new FileSystemXmlApplicationContext("/conf/applicationContext.xml");
     PostFactory postFactory = (PostFactory)ctx.getBean(post.getType());
     return postFactory.createSubPostDetailsFromPost(post, username);
   }
@@ -22,7 +22,7 @@ abstract public class PostFactory
 
   public static AbstractRumblrPost createPostFromDTO(PostDTO post, Collection<PostDetailDTO> postDetails)
   {
-    ApplicationContext ctx = new FileSystemXmlApplicationContext("applicationContext.xml");
+    ApplicationContext ctx = new FileSystemXmlApplicationContext("/conf/applicationContext.xml");
     PostFactory postFactory = (PostFactory)ctx.getBean(post.getType());
     return postFactory.createSubPostFromDTO(post, postDetails);
   }

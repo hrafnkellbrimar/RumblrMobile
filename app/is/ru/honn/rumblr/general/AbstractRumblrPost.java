@@ -10,10 +10,19 @@ public abstract class AbstractRumblrPost implements RumblrPost
   protected int id;
   protected Date date;
   protected String type;
+  protected String username;       // so we can get the user in the post.
   protected List<String> tags = new ArrayList<String>();
   public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-mm-dd hh:MM:ss");
 
-  public int getId()
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public int getId()
   {
     return id;
   }

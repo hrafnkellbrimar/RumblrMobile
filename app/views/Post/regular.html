@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set title:'Regularpost' /}
+
+#{form @Post.regularPost()}
+<div>
+    <input type="textarea" rows="2" cols="50" name="regular-title"/>
+</div>
+<div>
+    <input type="text" name="regular-body">
+</div>
+
+<div>
+    <input type="submit" value="post"/>
+</div>
+#{/form}

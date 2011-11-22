@@ -14,6 +14,7 @@ public class PostRowMapper implements ParameterizedRowMapper<PostDTO>
     post.setId(rs.getInt("id"));
     post.setType(rs.getString("type"));
     post.setDate(rs.getDate("date"));
+    post.setUsername(rs.getString("username"));
     return post;
   }
 }

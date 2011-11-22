@@ -1,0 +1,49 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+        <body>
+        <div id="content">
+
+            #{list items:contentList, as:'content'}
+
+            #{if content.getType() == "link"}
+                    <section class="column" id="link">
+                        <div class="customer"><p><a href="#">${content.getUsername()}</a></p></div>
+                        <div class="edit"><p><a href="#">edit</a></p></div>
+                        <div class="close"><a href="#"><img id="close" title="close image" height="20px" width="20px" src="../../../public/images/close.png" /></a></div>
+                        <div class="message"><p>${content.getLinkUrl()}</p></div>
+                        <div class="message"><p>${content.getLinkText()}</p></div>
+                        <div class="topic"><p><a href="#"><span>#engineers &nbsp;</span></a> <a href="#"><span>#problems &nbsp;</span></a> <a href="#"><span>#dilbert &nbsp;</span></a></div>
+                        <div class="like"><input class="button" id="like" name="Like" type="submit" value="Like"></div>
+                        <div class="likes"><a href="#"><span class="likes">523</span>&nbsp; liked this</a></div>
+                    </section>
+            #{/if}
+
+            #{if content.getType() == "regular"}
+                    <section class="column" id="regular">
+                        <div class="customer"><p><a href="#">${content.getUsername()}</a></p></div>
+                        <div class="edit"><p><a href="#">edit</a></p></div>
+                        <div class="close"><a href="#"><img id="close" title="close image" height="20px" width="20px" src="../../../public/images/close.png" /></a></div>
+                        <div class="message"><p>${content.getRegularTitle()}</p></div>
+                        <div class="message"><p>${content.getRegularBody()}</p></div>
+                        <div class="topic"><p><a href="#"><span>#engineers &nbsp;</span></a> <a href="#"><span>#problems &nbsp;</span></a> <a href="#"><span>#dilbert &nbsp;</span></a></div>
+                        <div class="like"><input class="button" id="like" name="Like" type="submit" value="Like"></div>
+                        <div class="likes"><a href="#"><span class="likes">523</span>&nbsp; liked this</a></div>
+                    </section>
+            #{/if}
+
+            #{if content.getType() == "quote"}
+                    <section class="column" id="quotes">
+                        <div class="customer"><p><a href="#">${content.getUsername()}</a></p></div>
+                        <div class="edit"><p><a href="#">edit</a></p></div>
+                        <div class="close"><a href="#"><img id="close" title="close image" height="20px" width="20px" src="../../../public/images/close.png" /></a></div>
+                        <div class="message"><p>${content.getQuoteText()}</p></div>
+                        <div class="message"><p>${content.getQuoteSource()}</p></div>
+                        <div class="topic"><p><a href="#"><span>#engineers &nbsp;</span></a> <a href="#"><span>#problems &nbsp;</span></a> <a href="#"><span>#dilbert &nbsp;</span></a></div>
+                        <div class="like"><input class="button" id="like" name="Like" type="submit" value="Like"></div>
+                        <div class="likes"><a href="#"><span class="likes">523</span>&nbsp; liked this</a></div>
+                    </section>
+            #{/if}
+            #{/list}
+        </div>
+        </body>
+        </html>

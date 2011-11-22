@@ -33,6 +33,7 @@ public class LinkPostFactory extends PostFactory
     linkPost.setId(post.getId());
     linkPost.setType(post.getType());
     linkPost.setDate(post.getDate());
+    linkPost.setUsername(post.getUsername()); // so we can get the user in the post.
 
     for(PostDetailDTO pd : postDetails)
     {

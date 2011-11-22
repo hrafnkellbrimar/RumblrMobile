@@ -27,6 +27,7 @@ public class RegularPostFactory extends PostFactory
     regularPost.setId(post.getId());
     regularPost.setType(post.getType());
     regularPost.setDate(post.getDate());
+    regularPost.setUsername(post.getUsername());          // so we can get the user in the post.
 
     for (PostDetailDTO pd : postDetails)
     {

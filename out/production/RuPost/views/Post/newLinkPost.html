@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set title:'Linkpost' /}
+
+#{form @Post.linkPost(linktext, linkurl)}
+<div>
+    <input type="textarea" rows="2" cols="50" name="linktext"/>
+</div>
+<div>
+    <input type="text" name="linkurl">
+</div>
+
+<div>
+    <input type="submit" value="post"/>
+</div>
+#{/form}

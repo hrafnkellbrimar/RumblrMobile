@@ -16,7 +16,7 @@ public class ReadAllPosts
 
   public ReadAllPosts()
   {
-    ApplicationContext ctx = new FileSystemXmlApplicationContext("applicationContext.xml");
+    ApplicationContext ctx = new FileSystemXmlApplicationContext("/conf/applicationContext.xml");
     PostService postService = (PostService)ctx.getBean("postService");
 
     Collection<AbstractRumblrPost> postlist = postService.getPosts("ru-honn");

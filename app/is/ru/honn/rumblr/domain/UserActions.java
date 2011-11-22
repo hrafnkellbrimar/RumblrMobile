@@ -4,6 +4,8 @@ import is.ru.honn.rumblr.general.UserDTO;
 import is.ru.honn.rumblr.data.users.UserDataGateway;
 import is.ru.honn.rumblr.service.UserService;
 
+import java.util.List;
+
 public class UserActions implements UserService
 {
   UserDataGateway userDataGateway;
@@ -17,7 +19,11 @@ public class UserActions implements UserService
     this.userDataGateway = UserDataGateway;
   }
 
-  public int signup(UserDTO user)
+    public List<String> getFollowers(String username) {
+        return this.userDataGateway.getFollowers(username);
+    }
+
+    public int signup(UserDTO user)
   {
     return this.userDataGateway.addUser(user);
   }

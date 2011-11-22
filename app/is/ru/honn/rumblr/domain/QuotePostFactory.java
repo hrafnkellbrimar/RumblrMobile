@@ -34,6 +34,7 @@ public class QuotePostFactory extends PostFactory
     quotePost.setId(post.getId());
     quotePost.setType(post.getType());
     quotePost.setDate(post.getDate());
+    quotePost.setUsername(post.getUsername());  // so we can get the user in the post.
 
     for(PostDetailDTO pd : postDetails)
     {

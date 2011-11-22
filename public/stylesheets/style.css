@@ -22,7 +22,7 @@ del { text-decoration:line-through; }
 table { border-collapse:collapse;border-spacing:0; }
 /* Here all the general styles for display go */
 body {
-	background:url(../img/background.png)repeat-x scroll center top #2C4762;
+    background: url("/public/images/background.png") repeat-x scroll center top #2C4762;
     color: #555;
     font: 14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
     height: 100%;
@@ -66,7 +66,7 @@ input {
 	font-weight: bold;
 }
 #content {
-    background: linear-gradient(#385774, #2C4762); /* the standard */ 
+    background: -moz-linear-gradient(#385774, #2C4762); /* the standard */
 	background: -moz-linear-gradient(#385774, #2C4762); /* FF 3.6+ */  
     background: -ms-linear-gradient(385774, #2C4762); /* IE10 */ 
 	border: 1px #036 solid; 
@@ -87,7 +87,7 @@ input {
 	color: #555;
 }
 .button {
-	background: #385774 url(../img/gradient.png) repeat-x;
+	background: #385774 url(../images/gradient.png) repeat-x;
 	display: inline-block;
 	padding: 2px 10px 3px;
 	color: #fff;
